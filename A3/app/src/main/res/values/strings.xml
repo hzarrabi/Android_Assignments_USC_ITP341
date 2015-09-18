@@ -3,4 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="american">American</string>
+    <string name="chinese">Chinese</string>
+    <string name="italian">Italian</string>
+    <string name="indian">Indian</string>
+    <string name="middleEast">Middle Eastern</string>
+    <string name="portugese">Portuguese</string>
 </resources>

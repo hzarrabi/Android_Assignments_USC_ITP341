@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/american"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
@@ -50,7 +50,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/chinese"
             android:id="@+id/textView2"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
@@ -73,7 +73,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/indian"
             android:id="@+id/textView3" />
     </LinearLayout>
 
@@ -95,7 +95,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/italian"
             android:id="@+id/textView4"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
@@ -118,7 +118,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/middleEast"
             android:id="@+id/textView5" />
     </LinearLayout>
 
@@ -141,7 +141,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="@string/portugese"
             android:id="@+id/textView6"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
