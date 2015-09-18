@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -30,11 +31,39 @@ public class MainActivity extends Activity {
     //listner
     View.OnClickListener buttonListener;
 
+    public static final String AMERICAN_CLICKS ="AMERICAN_CLICKS";
+    public static final String CHINESE_CLICKS ="CHINISE_CLICKS";
+    public static final String INDIAN_CLICKS ="INDIAN_CLICKS";
+    public static final String ITALIAN_CLICKS="ITALIAN_CLICKS";
+    public static final String MIDDLE_CLICKS ="MIDDLE_CLICKS";
+    public static final String PORTUGESE_CLICKS="PORTUGESE_CLICKS";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("My new title");
+        if (savedInstanceState != null)
+        {
+            american = savedInstanceState.getInt(AMERICAN_CLICKS);
+            chinese = savedInstanceState.getInt(CHINESE_CLICKS);
+            italian = savedInstanceState.getInt(ITALIAN_CLICKS);
+            indian = savedInstanceState.getInt(INDIAN_CLICKS);
+            middleEast = savedInstanceState.getInt(MIDDLE_CLICKS);
+            portugese = savedInstanceState.getInt(PORTUGESE_CLICKS);
+        }
+        else //if this is the first instance we want to make sure the votes are both 0
+        {
+            american=0;
+            chinese=0;
+            italian=0;
+            indian=0;
+            middleEast=0;
+            portugese=0;
+        }
+
+
         initialize();
     }
 
@@ -63,13 +92,6 @@ public class MainActivity extends Activity {
     //initializes the buttons, listeners, and ints
     private void initialize()
     {
-        american=0;
-        indian=0;
-        chinese=0;
-        italian=0;
-        middleEast=0;
-        portugese=0;
-
         americanButton = (ImageButton)findViewById(R.id.AmericanButton);
         indianButton = (ImageButton)findViewById(R.id.IndianButton);
         chineseButton= (ImageButton) findViewById(R.id.ChineseButton);
@@ -84,37 +106,61 @@ public class MainActivity extends Activity {
                 {
                     case R.id.AmericanButton:
                         american++;
-                        //TODO make toast
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.americanToast) + american + getResources().getString(R.string.times),
+                                Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.IndianButton:
                         indian++;
-
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.indianToast) + indian + getResources().getString(R.string.times),
+                                Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.ChineseButton:
                         chinese++;
-
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.chineseToast) + chinese + getResources().getString(R.string.times),
+                                Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.ItalianButton:
                         italian++;
-
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.italianToast) + italian + getResources().getString(R.string.times),
+                                Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.MiddleEastButton:
                         middleEast++;
-
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.middleToast) + middleEast + getResources().getString(R.string.times),
+                                Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.PortugeseButton:
                         portugese++;
-
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.portugeseToast) + portugese + getResources().getString(R.string.times),
+                                Toast.LENGTH_SHORT).show();
                         break;
 
                 }
 
             }
         };
+
+        americanButton.setOnClickListener(buttonListener);
+        chineseButton.setOnClickListener(buttonListener);
+        italianButton.setOnClickListener(buttonListener);
+        indianButton.setOnClickListener(buttonListener);
+        middleEastButton.setOnClickListener(buttonListener);
+        portugeseButton.setOnClickListener(buttonListener);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(AMERICAN_CLICKS, american);
+        outState.putInt(CHINESE_CLICKS, chinese);
+        outState.putInt(ITALIAN_CLICKS, italian);
+        outState.putInt(INDIAN_CLICKS, indian);
+        outState.putInt(MIDDLE_CLICKS, middleEast);
+        outState.putInt(PORTUGESE_CLICKS, portugese);
     }
 }

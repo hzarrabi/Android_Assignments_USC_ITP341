@@ -10,4 +10,12 @@
     <string name="indian">Indian</string>
     <string name="middleEast">Middle Eastern</string>
     <string name="portugese">Portuguese</string>
+
+    <string name="americanToast">You liked American &#160;</string>
+    <string name="chineseToast">You liked Chinese &#160;</string>
+    <string name="italianToast">You liked Italian &#160;</string>
+    <string name="indianToast">You liked Indian &#160;</string>
+    <string name="middleToast">You liked Middle Eastern &#160;</string>
+    <string name="portugeseToast">You liked Portuguese &#160;</string>
+    <string name="times">&#160; time(s)!</string>
 </resources>
