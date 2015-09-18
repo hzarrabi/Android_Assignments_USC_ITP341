@@ -84,7 +84,7 @@
         android:layout_row="1"
         android:layout_column="1"
         >
-        <ImageView
+        <ImageButton
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/ItalianButton"
