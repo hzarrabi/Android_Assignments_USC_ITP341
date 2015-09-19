@@ -10,6 +10,8 @@
         android:columnCount="2"
         android:rowCount="3"
         android:layout_gravity="center"
+
+
         >
 
 
@@ -27,6 +29,7 @@
                 android:id="@+id/AmericanButton"
                 android:background="@drawable/american_pressed"
                 android:scaleType="fitXY"
+                android:layout_marginRight="20dp"
                 />
 
             <TextView
