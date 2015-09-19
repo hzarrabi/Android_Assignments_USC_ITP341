@@ -20,7 +20,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/AmericanButton"
-            android:src="@drawable/american"
+            android:background="@drawable/american_pressed"
             android:scaleType="fitXY"
             />
 
@@ -43,7 +43,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/ChineseButton"
-            android:src="@drawable/chinese"
+            android:background="@drawable/chinese_pressed"
             android:scaleType="fitXY"
             />
 
@@ -66,7 +66,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/IndianButton"
-            android:src="@drawable/indian"
+            android:background="@drawable/indian_pressed"
             android:scaleType="fitXY"
             />
 
@@ -88,7 +88,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/ItalianButton"
-            android:src="@drawable/italian"
+            android:background="@drawable/italian_pressed"
             android:scaleType="fitXY"
             />
 
@@ -111,7 +111,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/MiddleEastButton"
-            android:src="@drawable/middle_east"
+            android:background="@drawable/middle_pressed"
             android:scaleType="fitXY"
             />
 
@@ -122,7 +122,7 @@
             android:id="@+id/textView5" />
     </LinearLayout>
 
-    portugese layout
+    <!--portugese layout-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_gravity="center"
@@ -134,7 +134,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/PortugeseButton"
-            android:src="@drawable/portuguese"
+            android:background="@drawable/portugese_pressed"
             android:scaleType="fitXY"
             />
 
