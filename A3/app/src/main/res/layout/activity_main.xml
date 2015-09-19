@@ -1,150 +1,157 @@
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:columnCount="2"
-    android:rowCount="3"
-    android:layout_gravity="center"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     >
 
-
-    <!--american layout-->
-    <LinearLayout
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
+        android:columnCount="2"
+        android:rowCount="3"
         android:layout_gravity="center"
-        android:layout_row="0"
-        android:layout_column="0"
         >
 
-        <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/AmericanButton"
-            android:background="@drawable/american_pressed"
-            android:scaleType="fitXY"
-            />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/american"
-            android:id="@+id/textView"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+        <!--american layout-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_column="0"
+            >
 
-    <!--chinese layout-->
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:layout_row="0"
-        android:layout_column="1"
-        >
-        <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/ChineseButton"
-            android:background="@drawable/chinese_pressed"
-            android:scaleType="fitXY"
-            />
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/AmericanButton"
+                android:background="@drawable/american_pressed"
+                android:scaleType="fitXY"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/chinese"
-            android:id="@+id/textView2"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/american"
+                android:id="@+id/textView"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
-    <!--Indian Layout-->
-    <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_row="1"
-        android:layout_column="0"
-        >
-        <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/IndianButton"
-            android:background="@drawable/indian_pressed"
-            android:scaleType="fitXY"
-            />
+        <!--chinese layout-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_column="1"
+            >
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/ChineseButton"
+                android:background="@drawable/chinese_pressed"
+                android:scaleType="fitXY"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/indian"
-            android:id="@+id/textView3" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chinese"
+                android:id="@+id/textView2"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
-    <!--Italian Layout-->
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:layout_row="1"
-        android:layout_column="1"
-        >
-        <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/ItalianButton"
-            android:background="@drawable/italian_pressed"
-            android:scaleType="fitXY"
-            />
+        <!--Indian Layout-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_row="1"
+            android:layout_column="0"
+            >
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/IndianButton"
+                android:background="@drawable/indian_pressed"
+                android:scaleType="fitXY"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/italian"
-            android:id="@+id/textView4"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/indian"
+                android:id="@+id/textView3" />
+        </LinearLayout>
 
-    <!--Middle East Layout-->
-    <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_row="2"
-        android:layout_column="0"
-        >
-        <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/MiddleEastButton"
-            android:background="@drawable/middle_pressed"
-            android:scaleType="fitXY"
-            />
+        <!--Italian Layout-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_row="1"
+            android:layout_column="1"
+            >
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/ItalianButton"
+                android:background="@drawable/italian_pressed"
+                android:scaleType="fitXY"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/middleEast"
-            android:id="@+id/textView5" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/italian"
+                android:id="@+id/textView4"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
-    <!--portugese layout-->
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:layout_row="2"
-        android:layout_column="1"
-        >
-        <ImageButton
-            android:layout_gravity="center_horizontal"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/PortugeseButton"
-            android:background="@drawable/portugese_pressed"
-            android:scaleType="fitXY"
-            />
+        <!--Middle East Layout-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_row="2"
+            android:layout_column="0"
+            >
+            <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/MiddleEastButton"
+                android:background="@drawable/middle_pressed"
+                android:scaleType="fitXY"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/portugese"
-            android:id="@+id/textView6"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/middleEast"
+                android:id="@+id/textView5" />
+        </LinearLayout>
+
+        <!--portugese layout-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_row="2"
+            android:layout_column="1"
+            >
+            <ImageButton
+                android:layout_gravity="center_horizontal"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/PortugeseButton"
+                android:background="@drawable/portugese_pressed"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/portugese"
+                android:id="@+id/textView6"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
 
-</GridLayout>
+    </GridLayout>
+
+</ScrollView>
