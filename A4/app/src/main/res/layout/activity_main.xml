@@ -15,7 +15,6 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:paddingBottom="20dp"
         >
 
@@ -26,14 +25,15 @@
             android:id="@+id/BillAmountText"
             android:textSize="25sp"
             android:textColor="#000000"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:paddingRight="20dp"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:ems="10"
-            android:id="@+id/editText" />
+            android:id="@+id/billAmount" />
     </LinearLayout>
 
     <LinearLayout
@@ -58,14 +58,14 @@
             android:layout_height="match_parent"
             android:text="0%"
             android:textSize="25sp"
-            android:layout_marginStart="45dp"
-            android:id="@+id/textView"
+            android:layout_marginStart="65dp"
+            android:id="@+id/percentAmount"
             android:layout_weight="0.00" />
 
         <SeekBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:id="@+id/seekBar"
             android:layout_weight="0.01" />
 
@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="$0.00"
-            android:layout_marginLeft="95dp"
+            android:layout_marginLeft="120dp"
             android:id="@+id/TipAmount"
             android:textSize="25sp" />
     </LinearLayout>
@@ -118,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="$0.00"
-            android:layout_marginLeft="73dp"
+            android:layout_marginLeft="98dp"
             android:id="@+id/TotalAmount"
             android:textSize="25sp" />
     </LinearLayout>
@@ -128,6 +128,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:paddingBottom="15dp"
+
         >
 
         <View
@@ -136,6 +138,60 @@
             android:layout_height= "2dp"
             android:background="#d3d3d3"
          />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Split Bill?"
+            android:id="@+id/SplitBillText"
+            android:textSize="25sp"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_weight="1"
+            android:entries="@array/spinner_items"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="15dp"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Per Person"
+            android:id="@+id/PerPersonText"
+            android:textSize="25sp"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Per Person"
+            android:id="@+id/PerPerson"
+            android:textSize="25sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginStart="35dp"/>
     </LinearLayout>
 
 

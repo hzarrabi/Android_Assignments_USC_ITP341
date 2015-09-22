@@ -4,8 +4,25 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends Activity {
+
+    private EditText amount;
+    private TextView percentText;
+    private SeekBar percentBar;
+    private TextView tipAmount;
+    private TextView totalAmount;
+    private Spinner spinner;
+    private TextView perPersontText;
+    private TextView amountPerPerson;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +50,17 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void initialize()
+    {
+        amount = (EditText)findViewById(R.id.billAmount);
+        percentText = (TextView)findViewById(R.id.percentAmount);
+        percentBar= (SeekBar) findViewById(R.id.seekBar);
+        tipAmount = (TextView)findViewById(R.id.TipAmount);
+        totalAmount = (TextView)findViewById(R.id.TotalAmount);
+        spinner = (Spinner)findViewById(R.id.spinner);
+        perPersontText = (TextView) findViewById(R.id.PerPersonText);
+        amountPerPerson = (TextView) findViewById(R.id.PerPerson);
     }
 }

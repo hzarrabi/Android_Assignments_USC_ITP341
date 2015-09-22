@@ -3,4 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="spinner_items">
+        <item>No</item>
+        <item>2 ways</item>
+        <item>3 ways</item>
+        <item>4 ways</item>
+    </string-array>
 </resources>
