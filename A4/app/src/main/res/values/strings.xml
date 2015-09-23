@@ -10,4 +10,12 @@
         <item>3 ways</item>
         <item>4 ways</item>
     </string-array>
+
+    <string name="Bill_Amount">Bill Amount</string>
+    <string name="Percent">Percent</string>
+    <string name="Tip">Tip</string>
+    <string name="Total">Total</string>
+    <string name="Split_Bill">Split Bill?</string>
+    <string name="Per_Person">Per Person</string>
+
 </resources>

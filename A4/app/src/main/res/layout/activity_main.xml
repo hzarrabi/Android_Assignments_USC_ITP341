@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bill Amount"
+            android:text="@string/Bill_Amount"
             android:id="@+id/BillAmountText"
             android:textSize="25sp"
             android:textColor="#000000"
@@ -47,7 +47,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Percent"
+            android:text="@string/Percent"
             android:id="@+id/PercenText"
             android:textSize="25sp"
             android:textColor="#000000"
@@ -63,11 +63,10 @@
             android:layout_weight="0.00" />
 
         <SeekBar
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
             android:id="@+id/seekBar"
-            android:layout_weight="0.01" />
+            />
 
     </LinearLayout>
 
@@ -82,7 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tip"
+            android:text="@string/Tip"
             android:id="@+id/TipText"
             android:textSize="25sp"
             android:textColor="#000000"
@@ -108,7 +107,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total"
+            android:text="@string/Total"
             android:id="@+id/TotalText"
             android:textSize="25sp"
             android:textColor="#000000"
@@ -150,14 +149,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Split Bill?"
+            android:text="@string/Split_Bill"
             android:id="@+id/SplitBillText"
             android:textSize="25sp"
             android:textColor="#000000"
             android:textStyle="bold" />
 
         <Spinner
-            android:layout_width="0dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:id="@+id/spinner"
             android:layout_weight="1"
@@ -177,7 +176,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Per Person"
+            android:text="@string/Per_Person"
             android:id="@+id/PerPersonText"
             android:textSize="25sp"
             android:textColor="#000000"
