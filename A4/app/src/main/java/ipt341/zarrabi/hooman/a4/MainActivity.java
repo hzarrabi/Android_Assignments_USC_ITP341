@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
@@ -116,6 +117,9 @@ public class MainActivity extends Activity {
                 total = tip + billAmount;
                 totalAmount.setText(NumberFormat.getCurrencyInstance().format(total));
 
+                //changes per person amount if you change bill amount
+                amountPerPerson.setText(NumberFormat.getCurrencyInstance().format(total/(spinner.getSelectedItemPosition()+1)));
+
             }
 
             @Override
@@ -141,6 +145,8 @@ public class MainActivity extends Activity {
                 Log.d("checking percent", "total is" + tip);
                 totalAmount.setText(NumberFormat.getCurrencyInstance().format(total));
 
+                //changes the per person amount if you change tip percentage
+                amountPerPerson.setText(NumberFormat.getCurrencyInstance().format(total/(spinner.getSelectedItemPosition()+1)));
 
             }
 
@@ -152,6 +158,32 @@ public class MainActivity extends Activity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
+            }
+        });
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position==0)
+                {
+                    perPersontText.setVisibility(View.INVISIBLE);
+                    amountPerPerson.setVisibility(View.INVISIBLE);
+                }
+                else
+                {
+                    perPersontText.setVisibility(View.VISIBLE);
+                    amountPerPerson.setVisibility(View.VISIBLE);
+
+                    amountPerPerson.setText(NumberFormat.getCurrencyInstance().format(total/(position+1)));
+                }
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                perPersontText.setVisibility(View.INVISIBLE);
+                amountPerPerson.setVisibility(View.INVISIBLE);
             }
         });
     }
