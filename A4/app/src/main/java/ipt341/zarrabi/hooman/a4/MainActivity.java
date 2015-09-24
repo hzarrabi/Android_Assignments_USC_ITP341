@@ -104,7 +104,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (amount.getText().toString().trim().length() == 0) billAmount=0.00;//in case the text edit is empty
+                if (amount.getText().toString().trim().length() == 0 ) billAmount=0.00;//in case the text edit is empty
 
                 else billAmount = Double.parseDouble(amount.getText().toString());//changing the bill amount
 

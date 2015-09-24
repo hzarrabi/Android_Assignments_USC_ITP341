@@ -63,7 +63,7 @@
             android:layout_weight="0.00" />
 
         <SeekBar
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/seekBar"
             />
