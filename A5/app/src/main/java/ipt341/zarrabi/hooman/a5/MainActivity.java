@@ -14,13 +14,20 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //fragment manager manages all the fragments for our activity
+        //fragment manager used to interact with fragments inside an activity
         FragmentManager manager=getFragmentManager();
+
+        //fragment transaction used to perform operation such as add, remove, replace, hide
         FragmentTransaction fragmentTransaction= manager.beginTransaction();//before adding transaction you begin it!
 
         if(savedInstanceState == null) {
-            MasterFragment nameFragmnent = new MasterFragment();
-            dialogFragment.show(fragmentTransaction, "Dialog Fragmet");
+            MasterFragment left = new MasterFragment();
+            fragmentTransaction.add(R.id.fragment,left,"added left");//added the left fragment
+
+            DetailFragment right = new DetailFragment();
+            fragmentTransaction.add(R.id.fragment,right,"added right");
+
+            fragmentTransaction.commit();
         }
 
     }
