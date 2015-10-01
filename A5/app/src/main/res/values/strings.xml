@@ -5,4 +5,8 @@
     <string name="rob_string">Rob</string>
     <string name="arjun_string">Arjun</string>
     <string name="hooman_button">Hooman</string>
+    <string name="email_string">Email:</string>
+    <string name="phone_string">Phone:</string>
+    <string name="address_string">Address:</string>
+    <string name="notes_string">Notes:</string>
 </resources>
