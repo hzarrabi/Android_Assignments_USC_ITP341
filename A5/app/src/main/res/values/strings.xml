@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">A5</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="rob_string">Rob</string>
+    <string name="arjun_string">Arjun</string>
+    <string name="hooman_button">Hooman</string>
+</resources>
