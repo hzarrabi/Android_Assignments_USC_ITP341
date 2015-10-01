@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/">
+    android:id="@+id/detail_layout">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -11,29 +11,32 @@
         android:layout_gravity="center_horizontal">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:text="Name"
-            android:ems="10"
             android:id="@+id/editText"
-            android:layout_weight="1" />
+           />
 
         <ImageView
             android:layout_width="142dp"
             android:layout_height="190dp"
+            android:layout_weight="1"
+            android:layout_gravity="right"
             android:id="@+id/imageView"
-            android:gravity="right"
             android:src="@drawable/default_prof_pic" />
     </LinearLayout>
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:columnCount="3"
-        android:rowCount="3">
+        android:rowCount="3"
+        android:paddingRight="30dp">
 
+
+        <!--email-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,19 +44,21 @@
             android:id="@+id/textView"
             android:layout_row="0"
             android:layout_column="0"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:layout_marginRight="50dp"
             android:layout_marginLeft="10dp" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/editText2"
             android:layout_row="0"
-            android:layout_column="1" />
+            android:layout_column="1"
+            />
 
+        <!--phone-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,20 +66,68 @@
             android:id="@+id/phone_text"
             android:layout_row="1"
             android:layout_column="0"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:layout_marginRight="50dp"
             android:layout_marginLeft="10dp"
             />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:inputType="phone"
             android:ems="10"
             android:id="@+id/email_field"
             android:layout_row="1"
             android:layout_column="1" />
+
+        <!--address-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address:"
+            android:id="@+id/address_text"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:textSize="30sp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:id="@+id/address_field"
+            android:layout_row="2"
+            android:layout_column="1" />
+
     </GridLayout>
+
+    <!--notes-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notes:"
+        android:id="@+id/Notes_text"
+        android:textSize="30sp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="30dp"
+        />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+
+        android:id="@+id/notes_field"
+       />
+
+
 
 
 </LinearLayout>
