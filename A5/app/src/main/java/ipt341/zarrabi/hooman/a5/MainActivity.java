@@ -22,10 +22,10 @@ public class MainActivity extends Activity {
 
         if(savedInstanceState == null) {
             MasterFragment left = new MasterFragment();
-            fragmentTransaction.add(R.id.left,left,"added left");//added the left fragment
+            fragmentTransaction.add(left,"added left");//added the left fragment
 
             DetailFragment right = new DetailFragment();
-            fragmentTransaction.add(R.id.right,right,"added right");
+            fragmentTransaction.add(right,"added right");
 
             fragmentTransaction.commit();
         }
