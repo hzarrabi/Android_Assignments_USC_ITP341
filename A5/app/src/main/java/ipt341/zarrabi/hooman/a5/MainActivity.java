@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -55,17 +56,18 @@ public class MainActivity extends Activity {
                         case R.id.rob_button:
                             if(manager.findFragmentById(R.id.right)==null)
                             {
-                                right=(DetailFragment)manager.findFragmentById(R.id.right);
-                                fragmentTransaction.add(right,"adding right fragment");
+                                Log.d("right rob", "right frag");
+                                right=new DetailFragment();
+                                fragmentTransaction.add(right, "adding right fragment");
                             }
                             break;
 
                         case R.id.arjun_button:
-
+                            Log.d("right arjun", "right frag");
                             break;
 
                         case R.id.hooman_button:
-
+                            Log.d("hooman","hooman");
                             break;
                     }
 

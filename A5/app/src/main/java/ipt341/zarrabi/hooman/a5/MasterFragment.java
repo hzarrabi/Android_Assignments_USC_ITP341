@@ -3,6 +3,7 @@ package ipt341.zarrabi.hooman.a5;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,7 @@ public class MasterFragment extends Fragment
 {
     private Button rob_button;
     private Button arjun_button;
-    private Button hooman_hooman;
+    private Button hooman_button;
 
     View.OnClickListener listener;
 
@@ -31,8 +32,29 @@ public class MasterFragment extends Fragment
 
         rob_button = (Button) view.findViewById(R.id.rob_button);
         arjun_button = (Button) view.findViewById(R.id.arjun_button);
-        hooman_hooman = (Button) view.findViewById(R.id.hooman_button);
+        hooman_button = (Button) view.findViewById(R.id.hooman_button);
 
+
+        rob_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick(rob_button);
+            }
+        });
+
+        arjun_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick(arjun_button);
+            }
+        });
+
+        hooman_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick(hooman_button);
+            }
+        });
 
         return view;
     }
