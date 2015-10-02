@@ -25,6 +25,8 @@ public class DetailFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
+
+
         //this links the appearance of layout of fragment
         View view = inflater.inflate(R.layout.detail_layout, container, false);
 
@@ -36,6 +38,15 @@ public class DetailFragment extends Fragment
         notes= (EditText) view.findViewById(R.id.notes_field);
 
         return view;
+    }
+
+    public void getUser(User user)
+    {
+        name.setText(user.name);
+        email.setText(user.email);
+        phone.setText(user.phone);
+        address.setText(user.address);
+        notes.setText(user.notes);
     }
 
 

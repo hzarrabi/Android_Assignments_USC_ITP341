@@ -1,6 +1,7 @@
 package ipt341.zarrabi.hooman.a5;
 
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,8 @@ public class MasterFragment extends Fragment
     private Button arjun_button;
     private Button hooman_hooman;
 
+    View.OnClickListener listener;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -26,15 +29,17 @@ public class MasterFragment extends Fragment
         //this links the appearance of layout of fragment
         View view = inflater.inflate(R.layout.master_layout, container, false);
 
-        rob_button=(Button) view.findViewById(R.id.rob_button);
-        arjun_button=(Button) view.findViewById(R.id.arjun_button);
-        hooman_hooman=(Button) view.findViewById(R.id.hooman_button);
+        rob_button = (Button) view.findViewById(R.id.rob_button);
+        arjun_button = (Button) view.findViewById(R.id.arjun_button);
+        hooman_hooman = (Button) view.findViewById(R.id.hooman_button);
 
-        //getActivity();
-        // TODO: 10/1/2015  connect listeners here
 
         return view;
     }
 
+    public void buttonListener(View.OnClickListener listener)
+    {
+        this.listener=listener;
+    }
 
 }

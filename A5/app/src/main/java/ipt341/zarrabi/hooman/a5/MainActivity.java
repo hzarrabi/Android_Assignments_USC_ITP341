@@ -1,34 +1,81 @@
 package ipt341.zarrabi.hooman.a5;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends Activity {
+
+    User rob;
+    User arjun;
+    User hooman;
+
+    FragmentManager manager;
+    FragmentTransaction fragmentTransaction;
+
+    MasterFragment left;
+    DetailFragment right;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         //fragment manager used to interact with fragments inside an activity
-        FragmentManager manager=getFragmentManager();
+        manager=getFragmentManager();
 
         //fragment transaction used to perform operation such as add, remove, replace, hide
-        FragmentTransaction fragmentTransaction= manager.beginTransaction();//before adding transaction you begin it!
+        fragmentTransaction= manager.beginTransaction();//before adding transaction you begin it!
 
         if(savedInstanceState == null) {
-            MasterFragment left = new MasterFragment();
+            /*left = new MasterFragment();
             fragmentTransaction.add(left,"added left");//added the left fragment
 
-            DetailFragment right = new DetailFragment();
+            right = new DetailFragment();
             fragmentTransaction.add(right,"added right");
 
-            fragmentTransaction.commit();
+            fragmentTransaction.commit();*/
+
+            initializeUsers();
+
+            left=(MasterFragment) manager.findFragmentById(R.id.left);
+
+            left.buttonListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch(v.getId())
+                    {
+                        case R.id.rob_button:
+                            if(manager.findFragmentById(R.id.right)==null)
+                            {
+                                right=(DetailFragment)manager.findFragmentById(R.id.right);
+                                fragmentTransaction.add(right,"adding right fragment");
+                            }
+                            break;
+
+                        case R.id.arjun_button:
+
+                            break;
+
+                        case R.id.hooman_button:
+
+                            break;
+                    }
+
+                }
+            });
+
         }
+
+
+
 
     }
 
@@ -53,5 +100,12 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void initializeUsers()
+    {
+        rob= new User("Rob Parke","rparke@usc.edu","(323)111-1111","2343 N. Palm Dr. Beverly Hills, CA", "Hi I'm Rob");
+        arjun= new User("Arjun","arjun@usc.edu","(323)111-1111","2343 N. Palm Dr. Beverly Hills, CA", "Hi I'm Arjun");
+        hooman= new User("Hooman", "hzarrabi@usc.edu", "(310)234-3252", "2523 N. Almont Dr. Beverly Hills, CA", "Hi Hooman");
     }
 }

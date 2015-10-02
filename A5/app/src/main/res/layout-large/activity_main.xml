@@ -13,6 +13,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:name="ipt341.zarrabi.hooman.a5.MasterFragment"
+        android:id="@+id/left"
         >
     </fragment>
 
@@ -21,7 +22,9 @@
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_weight="5"
-        android:name="ipt341.zarrabi.hooman.a5.DetailFragment">
+        android:name="ipt341.zarrabi.hooman.a5.DetailFragment"
+        android:id="@+id/right"
+        >
 
     </fragment>
 
