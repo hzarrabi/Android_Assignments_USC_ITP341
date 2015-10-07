@@ -1,3 +1,4 @@
+
 <resources>
     <string name="app_name">A5</string>
     <string name="hello_world">Hello world!</string>
@@ -9,4 +10,29 @@
     <string name="phone_string">Phone:</string>
     <string name="address_string">Address:</string>
     <string name="notes_string">Notes:</string>
+
+    <string-array name="rob">
+        <item>Rob Parke</item>
+        <item>rparke@usc.edu</item>
+        <item>323 111 1111</item>
+        <item>2343 N. Palm Dr. Beverly Hills, CA</item>
+        <item>Hi I\'m Rob</item>
+    </string-array>
+
+    <string-array name="arjun">
+        <item>Arjun</item>
+        <item>arjun@usc.edu</item>
+        <item>323 111 1111</item>
+        <item>2343 N. Palm Dr. Beverly Hills, CA</item>
+        <item>Hi I\'m Arjun</item>
+    </string-array>
+
+    <string-array name="hooman">
+        <item>Hooman</item>
+        <item>hzarrabi@usc.edu</item>
+        <item>310 234 3252</item>
+        <item>2523 N. Almont Dr. Beverly Hills, CA</item>
+        <item>Hi i\'m Hooman</item>
+    </string-array>
+
 </resources>

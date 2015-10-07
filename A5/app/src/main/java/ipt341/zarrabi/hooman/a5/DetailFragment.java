@@ -27,6 +27,7 @@ public class DetailFragment extends Fragment
     String the_phone;
     String the_address;
     String the_notes;
+    int pic_id;
 
 
 
@@ -43,7 +44,7 @@ public class DetailFragment extends Fragment
         name=(EditText) view.findViewById(R.id.name_field);
         name.setText(the_name);
         picture=(ImageView) view.findViewById(R.id.profile_picture);
-        //// TODO: 10/6/2015
+
         email=(EditText) view.findViewById(R.id.email_field);
         email.setText(the_email);
         phone= (EditText) view.findViewById(R.id.phone_field);
@@ -52,6 +53,8 @@ public class DetailFragment extends Fragment
         address.setText(the_address);
         notes= (EditText) view.findViewById(R.id.notes_field);
         notes.setText(the_notes);
+
+        picture.setImageResource(pic_id);
 
         return view;
     }
@@ -63,6 +66,7 @@ public class DetailFragment extends Fragment
         the_phone=user.phone;
         the_address=user.address;
         the_notes=user.notes;
+        pic_id=user.pic;
     }
 
     public void changeUser(User user)
@@ -72,6 +76,7 @@ public class DetailFragment extends Fragment
         phone.setText(user.phone);
         address.setText(user.address);
         notes.setText(user.notes);
+        picture.setImageResource(pic_id);
     }
 
 

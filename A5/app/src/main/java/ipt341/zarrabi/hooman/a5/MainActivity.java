@@ -144,7 +144,7 @@ public class MainActivity extends Activity {
         return true;
     }
 
-    @Override
+   /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -157,12 +157,15 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     public void initializeUsers()
     {
-        rob= new User("Rob Parke","rparke@usc.edu","(323)111-1111","2343 N. Palm Dr. Beverly Hills, CA", "Hi I'm Rob");
-        arjun= new User("Arjun","arjun@usc.edu","(323)111-1111","2343 N. Palm Dr. Beverly Hills, CA", "Hi I'm Arjun");
-        hooman= new User("Hooman", "hzarrabi@usc.edu", "(310)234-3252", "2523 N. Almont Dr. Beverly Hills, CA", "Hi Hooman");
+        String [] rob_array= getResources().getStringArray(R.array.rob);
+        String [] hooman_array= getResources().getStringArray(R.array.hooman);
+        String [] arjun_array= getResources().getStringArray(R.array.arjun);
+        rob= new User(rob_array,R.drawable.rob_pic);
+        arjun= new User(arjun_array,R.drawable.arjun_pic);
+        hooman= new User(hooman_array,R.drawable.hooman_pic);
     }
 }

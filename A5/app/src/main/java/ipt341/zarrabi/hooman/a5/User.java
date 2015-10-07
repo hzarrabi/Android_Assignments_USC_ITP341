@@ -9,14 +9,16 @@ public class User {
     public String phone;
     public String address;
     public String notes;
+    int pic;
 
-    User(String name, String email, String phone, String address, String notes)
+    User(String [] info, int picID)
     {
-        this.name=name;
-        this.email=email;
-        this.phone=phone;
-        this.address=address;
-        this.notes=notes;
+        this.name=info[0];
+        this.email=info[1];
+        this.phone=info[2];
+        this.address=info[3];
+        this.notes=info[4];
+        pic=picID;
     }
 
 }
