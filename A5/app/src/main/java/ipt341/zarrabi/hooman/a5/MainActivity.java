@@ -33,7 +33,6 @@ public class MainActivity extends Activity {
         manager=getFragmentManager();
 
         //fragment transaction used to perform operation such as add, remove, replace, hide
-        fragmentTransaction= manager.beginTransaction();//before adding transaction you begin it!
 
         if(savedInstanceState == null) {
             /*left = new MasterFragment();
@@ -51,19 +50,55 @@ public class MainActivity extends Activity {
             left.buttonListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    FragmentTransaction fragmentTransaction =manager.beginTransaction();
+
                     switch(v.getId())
                     {
                         case R.id.rob_button:
+                            //if the right fragment doesn't exist (in the case of tablet
                             if(manager.findFragmentById(R.id.right)==null)
                             {
                                 Log.d("right rob", "right frag");
                                 right=new DetailFragment();
-                                fragmentTransaction.add(right, "adding right fragment");
+                                //Bundle bundle = new Bundle();
+
+                                //right.setArguments(bundle);
+                                fragmentTransaction.add(R.id.master_layout, right, "right");
+                                fragmentTransaction.addToBackStack("Replace");
+                                fragmentTransaction.commit();
+                                right.getUser(rob);
                             }
+                            //is in tablet mode
+                            else
+                            {
+                                Log.d("what","what");
+                                right=(DetailFragment) manager.findFragmentById(R.id.right);
+                                right.changeUser(rob);
+                            }
+
                             break;
 
                         case R.id.arjun_button:
                             Log.d("right arjun", "right frag");
+                            if(manager.findFragmentById(R.id.right)==null)
+                            {
+                                Log.d("right rob", "right frag");
+                                right=new DetailFragment();
+                                //Bundle bundle = new Bundle();
+
+                                //right.setArguments(bundle);
+                                fragmentTransaction.add(R.id.master_layout, right, "right");
+                                fragmentTransaction.addToBackStack("Replace");
+                                fragmentTransaction.commit();
+                                right.getUser(arjun);
+                            }
+                            else
+                            {
+
+                            }
+
+
+
                             break;
 
                         case R.id.hooman_button:
