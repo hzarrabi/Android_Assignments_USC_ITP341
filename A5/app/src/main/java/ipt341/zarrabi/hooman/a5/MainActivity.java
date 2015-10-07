@@ -94,7 +94,9 @@ public class MainActivity extends Activity {
                             }
                             else
                             {
-
+                                Log.d("what","what");
+                                right=(DetailFragment) manager.findFragmentById(R.id.right);
+                                right.changeUser(arjun);
                             }
 
 
@@ -103,6 +105,24 @@ public class MainActivity extends Activity {
 
                         case R.id.hooman_button:
                             Log.d("hooman","hooman");
+                            if(manager.findFragmentById(R.id.right)==null)
+                            {
+                                Log.d("right rob", "right frag");
+                                right=new DetailFragment();
+                                //Bundle bundle = new Bundle();
+
+                                //right.setArguments(bundle);
+                                fragmentTransaction.add(R.id.master_layout, right, "right");
+                                fragmentTransaction.addToBackStack("Replace");
+                                fragmentTransaction.commit();
+                                right.getUser(hooman);
+                            }
+                            else
+                            {
+                                Log.d("what","what");
+                                right=(DetailFragment) manager.findFragmentById(R.id.right);
+                                right.changeUser(hooman);
+                            }
                             break;
                     }
 
