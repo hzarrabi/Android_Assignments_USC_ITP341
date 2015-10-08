@@ -22,6 +22,10 @@
                 android:inputType="textPersonName"
                 android:id="@+id/name_field"
                 android:textColor="#112642"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                />
 
             <ImageView
@@ -53,7 +57,7 @@
                 android:textSize="30sp"
                 android:layout_marginRight="50dp"
                 android:layout_marginLeft="10dp"
-                android:textColor="#112642"/>
+                android:textColor="#112642" />
 
             <EditText
                 android:layout_width="fill_parent"
@@ -64,6 +68,10 @@
                 android:layout_row="0"
                 android:layout_column="1"
                 android:textColor="#112642"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 />
 
             <!--phone-->
@@ -88,7 +96,11 @@
                 android:id="@+id/phone_field"
                 android:layout_row="1"
                 android:layout_column="1"
-                android:textColor="#112642"/>
+                android:textColor="#112642"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
 
             <!--address-->
             <TextView
@@ -112,7 +124,12 @@
                 android:id="@+id/address_field"
                 android:layout_row="2"
                 android:layout_column="1"
-                android:textColor="#112642"/>
+                android:textColor="#112642"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                />
 
         </GridLayout>
 
@@ -137,6 +154,10 @@
             android:layout_marginRight="15dp"
             android:id="@+id/notes_field"
             android:textColor="#112642"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
            />
 
     </LinearLayout>

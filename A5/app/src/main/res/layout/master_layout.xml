@@ -17,6 +17,7 @@
         android:id="@+id/rob_button"
         android:background="@drawable/custom_button"
         android:layout_marginBottom="10dp"
+        android:textColor="#ffffff"
         />
 
     <Button
@@ -26,6 +27,7 @@
         android:id="@+id/arjun_button"
         android:background="@drawable/custom_button"
         android:layout_marginBottom="10dp"
+        android:textColor="#ffffff"
         />
 
     <Button
@@ -35,5 +37,6 @@
         android:id="@+id/hooman_button"
         android:background="@drawable/custom_button"
         android:layout_marginBottom="10dp"
+        android:textColor="#ffffff"
         />
 </LinearLayout>
