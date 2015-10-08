@@ -41,6 +41,11 @@ public class DetailFragment extends Fragment
         //this links the appearance of layout of fragment
         View view = inflater.inflate(R.layout.detail_layout, container, false);
 
+        if(savedInstanceState!=null)
+        {
+            pic_id= savedInstanceState.getInt("pic_id");
+        }
+
         name=(EditText) view.findViewById(R.id.name_field);
         name.setText(the_name);
         picture=(ImageView) view.findViewById(R.id.profile_picture);
@@ -79,5 +84,11 @@ public class DetailFragment extends Fragment
         picture.setImageResource(user.pic);
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("pic_id",pic_id);
+    }
 
 }
