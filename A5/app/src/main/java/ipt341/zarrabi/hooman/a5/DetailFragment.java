@@ -76,7 +76,7 @@ public class DetailFragment extends Fragment
         phone.setText(user.phone);
         address.setText(user.address);
         notes.setText(user.notes);
-        picture.setImageResource(pic_id);
+        picture.setImageResource(user.pic);
     }
 
 

@@ -22,6 +22,9 @@ public class MainActivity extends Activity {
     MasterFragment left;
     DetailFragment right;
 
+    String [] rob_array;
+    String [] arjun_array;
+    String [] hooman_array;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,91 +48,100 @@ public class MainActivity extends Activity {
 
             initializeUsers();
 
-            left=(MasterFragment) manager.findFragmentById(R.id.left);
-
-            left.buttonListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    FragmentTransaction fragmentTransaction =manager.beginTransaction();
-
-                    switch(v.getId())
-                    {
-                        case R.id.rob_button:
-                            //if the right fragment doesn't exist (in the case of tablet
-                            if(manager.findFragmentById(R.id.right)==null)
-                            {
-                                Log.d("right rob", "right frag");
-                                right=new DetailFragment();
-                                //Bundle bundle = new Bundle();
-
-                                //right.setArguments(bundle);
-                                fragmentTransaction.add(R.id.master_layout, right, "right");
-                                fragmentTransaction.addToBackStack("Replace");
-                                fragmentTransaction.commit();
-                                right.getUser(rob);
-                            }
-                            //is in tablet mode
-                            else
-                            {
-                                Log.d("what","what");
-                                right=(DetailFragment) manager.findFragmentById(R.id.right);
-                                right.changeUser(rob);
-                            }
-
-                            break;
-
-                        case R.id.arjun_button:
-                            Log.d("right arjun", "right frag");
-                            if(manager.findFragmentById(R.id.right)==null)
-                            {
-                                Log.d("right rob", "right frag");
-                                right=new DetailFragment();
-                                //Bundle bundle = new Bundle();
-
-                                //right.setArguments(bundle);
-                                fragmentTransaction.add(R.id.master_layout, right, "right");
-                                fragmentTransaction.addToBackStack("Replace");
-                                fragmentTransaction.commit();
-                                right.getUser(arjun);
-                            }
-                            else
-                            {
-                                Log.d("what","what");
-                                right=(DetailFragment) manager.findFragmentById(R.id.right);
-                                right.changeUser(arjun);
-                            }
-
-
-
-                            break;
-
-                        case R.id.hooman_button:
-                            Log.d("hooman","hooman");
-                            if(manager.findFragmentById(R.id.right)==null)
-                            {
-                                Log.d("right rob", "right frag");
-                                right=new DetailFragment();
-                                //Bundle bundle = new Bundle();
-
-                                //right.setArguments(bundle);
-                                fragmentTransaction.add(R.id.master_layout, right, "right");
-                                fragmentTransaction.addToBackStack("Replace");
-                                fragmentTransaction.commit();
-                                right.getUser(hooman);
-                            }
-                            else
-                            {
-                                Log.d("what","what");
-                                right=(DetailFragment) manager.findFragmentById(R.id.right);
-                                right.changeUser(hooman);
-                            }
-                            break;
-                    }
-
-                }
-            });
-
         }
+
+        else
+        {
+            rob_array= (String []) savedInstanceState.getSerializable("rob");
+            arjun_array= (String []) savedInstanceState.getSerializable("arjun");
+            hooman_array=(String []) savedInstanceState.getSerializable("hooman");
+            initializeUsers();
+        }
+
+        left=(MasterFragment) manager.findFragmentById(R.id.left);
+
+        left.buttonListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fragmentTransaction =manager.beginTransaction();
+
+                switch(v.getId())
+                {
+                    case R.id.rob_button:
+                        //if the right fragment doesn't exist (in the case of tablet
+                        if(manager.findFragmentById(R.id.right)==null)
+                        {
+                            Log.d("right rob", "right frag");
+                            right=new DetailFragment();
+                            //Bundle bundle = new Bundle();
+
+                            //right.setArguments(bundle);
+                            fragmentTransaction.add(R.id.master_layout, right, "right");
+                            fragmentTransaction.addToBackStack("Replace");
+                            fragmentTransaction.commit();
+                            right.getUser(rob);
+                        }
+                        //is in tablet mode
+                        else
+                        {
+                            Log.d("what","what");
+                            right=(DetailFragment) manager.findFragmentById(R.id.right);
+                            right.changeUser(rob);
+                        }
+
+                        break;
+
+                    case R.id.arjun_button:
+                        Log.d("right arjun", "right frag");
+                        if(manager.findFragmentById(R.id.right)==null)
+                        {
+                            Log.d("right rob", "right frag");
+                            right=new DetailFragment();
+                            //Bundle bundle = new Bundle();
+
+                            //right.setArguments(bundle);
+                            fragmentTransaction.add(R.id.master_layout, right, "right");
+                            fragmentTransaction.addToBackStack("Replace");
+                            fragmentTransaction.commit();
+                            right.getUser(arjun);
+                        }
+                        else
+                        {
+                            Log.d("what","what");
+                            right=(DetailFragment) manager.findFragmentById(R.id.right);
+                            right.changeUser(arjun);
+                        }
+
+
+
+                        break;
+
+                    case R.id.hooman_button:
+                        Log.d("hooman","hooman");
+                        if(manager.findFragmentById(R.id.right)==null)
+                        {
+                            Log.d("right rob", "right frag");
+                            right=new DetailFragment();
+                            //Bundle bundle = new Bundle();
+
+                            //right.setArguments(bundle);
+                            fragmentTransaction.add(R.id.master_layout, right, "right");
+                            fragmentTransaction.addToBackStack("Replace");
+                            fragmentTransaction.commit();
+                            right.getUser(hooman);
+                        }
+                        else
+                        {
+                            Log.d("what","what");
+                            right=(DetailFragment) manager.findFragmentById(R.id.right);
+                            right.changeUser(hooman);
+                        }
+                        break;
+                }
+
+            }
+        });
+
 
 
 
@@ -159,11 +171,19 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }*/
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable("rob", rob_array);
+        outState.putSerializable("arjun",arjun_array);
+        outState.putSerializable("hooman",hooman_array);
+    }
+
     public void initializeUsers()
     {
-        String [] rob_array= getResources().getStringArray(R.array.rob);
-        String [] hooman_array= getResources().getStringArray(R.array.hooman);
-        String [] arjun_array= getResources().getStringArray(R.array.arjun);
+        rob_array= getResources().getStringArray(R.array.rob);
+        hooman_array= getResources().getStringArray(R.array.hooman);
+        arjun_array= getResources().getStringArray(R.array.arjun);
         rob= new User(rob_array,R.drawable.rob_pic);
         arjun= new User(arjun_array,R.drawable.arjun_pic);
         hooman= new User(hooman_array,R.drawable.hooman_pic);
