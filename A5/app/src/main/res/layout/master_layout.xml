@@ -6,6 +6,7 @@
     android:layout_gravity="center"
     android:paddingTop="15dp"
     android:id="@+id/master_layout"
+    android:background="#112642"
     >
 
 
@@ -14,6 +15,8 @@
         android:layout_height="75dp"
         android:text="@string/rob_string"
         android:id="@+id/rob_button"
+        android:background="@drawable/custom_button"
+        android:layout_marginBottom="10dp"
         />
 
     <Button
@@ -21,6 +24,8 @@
         android:layout_height="75dp"
         android:text="@string/arjun_string"
         android:id="@+id/arjun_button"
+        android:background="@drawable/custom_button"
+        android:layout_marginBottom="10dp"
         />
 
     <Button
@@ -28,5 +33,7 @@
         android:layout_height="75dp"
         android:text="@string/hooman_button"
         android:id="@+id/hooman_button"
+        android:background="@drawable/custom_button"
+        android:layout_marginBottom="10dp"
         />
 </LinearLayout>
