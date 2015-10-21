@@ -115,6 +115,24 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+
+            if(resultCode == Activity.RESULT_OK) {
+                Toast.makeText(getApplicationContext(), "Enjoy your order!", Toast.LENGTH_LONG).show();
+                sizeGroup.clearCheck();
+                brewSpinner.setSelection(0);
+                sugarSwitch.setChecked(false);
+                milkCheckBox.setChecked(false);
+                instructionsEdit.setText("");
+            }
+
+            else {Toast.makeText(getApplicationContext(), "Let's try it again", Toast.LENGTH_LONG).show();}
+
+    }//onActivityResult
+
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);

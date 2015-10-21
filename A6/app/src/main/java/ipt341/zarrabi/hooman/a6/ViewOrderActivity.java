@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -16,6 +18,9 @@ public class ViewOrderActivity extends Activity {
     TextView milk;
     TextView sugar;
     TextView instructions;
+    Button confirm;
+    Button cancel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +32,8 @@ public class ViewOrderActivity extends Activity {
         milk = (TextView) findViewById(R.id.milk);
         sugar = (TextView) findViewById(R.id.sugar);
         instructions = (TextView) findViewById(R.id.theInstructions);
-
+        confirm = (Button) findViewById(R.id.confirm);
+        cancel = (Button) findViewById(R.id.cancel);
 
         brew.setText(getIntent().getStringExtra(MainActivity.BREW));
 
@@ -63,6 +69,20 @@ public class ViewOrderActivity extends Activity {
 
         instructions.setText(getIntent().getStringExtra(MainActivity.INSTRUCTIONS));
 
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(RESULT_OK, null);
+                finish();
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
