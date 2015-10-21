@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">A6</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="order_string">Order fresh brewed coffee</string>
+    <string name="Order">ORDER</string>
+    <string name="Clear">CLEAR</string>
+    <string name="Save">SAVE FAVORITE</string>
+    <string name="Load">LOAD FAVORITE</string>
+    <string name="Instructions">Special Instructions</string>
+    <string name="Milk">Milk</string>
+    <string name="Sugar">Sugar</string>
+    <string name="Brew">Brew</string>
+    <string name="Large">Large</string>
+    <string name="Medium">Medium</string>
+    <string name="Small">Small</string>
+    <string name="Size">Size</string>
+</resources>

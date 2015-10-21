@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="brew">
+        <item>Kona</item>
+        <item>8 O\'Clock</item>
+        <item>Gevalia</item>
+        <item>Folgers</item>
+        <item>Seattle\'s Best</item>
+        <item>Peet\'s</item>
+
+    </string-array>
+
+</resources>
