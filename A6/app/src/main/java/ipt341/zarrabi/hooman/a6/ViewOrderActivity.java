@@ -5,19 +5,64 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class ViewOrderActivity extends Activity {
 
-    CoffeeOrder order;
+    TextView brew;
+    TextView size;
+    TextView milk;
+    TextView sugar;
+    TextView instructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_order);
 
-        //order = (CoffeeOrder) getIntent().getSerializableExtra(MainActivity.ORDER);//getting order object
+        brew = (TextView) findViewById(R.id.brew);
+        size = (TextView) findViewById(R.id.size);
+        milk = (TextView) findViewById(R.id.milk);
+        sugar = (TextView) findViewById(R.id.sugar);
+        instructions = (TextView) findViewById(R.id.theInstructions);
 
-        Log.d("Brew is", getIntent().getStringExtra(MainActivity.BREW));
+
+        brew.setText(getIntent().getStringExtra(MainActivity.BREW));
+
+        //size
+        if(getIntent().getIntExtra(MainActivity.SIZE,-1)==0)
+        {
+            size.setText("(Small)");
+        }
+        else if(getIntent().getIntExtra(MainActivity.SIZE,-1)==1)
+        {
+            size.setText("(Medium)");
+        }
+        else if(getIntent().getIntExtra(MainActivity.SIZE,-1)==2)
+        {
+            size.setText("(Large)");
+        }
+
+
+        //milk
+        if(getIntent().getBooleanExtra(MainActivity.MILK,false))
+        {
+            milk.setText("with milk");
+        }
+        else milk.setText("no milk");
+
+        //sugar
+        if(getIntent().getBooleanExtra(MainActivity.SUGAR,false))
+        {
+            sugar.setText("with sugar");
+        }
+        else sugar.setText("no sugar");
+
+
+        instructions.setText(getIntent().getStringExtra(MainActivity.INSTRUCTIONS));
+
 
     }
 
