@@ -1,8 +1,10 @@
 package ipt341.zarrabi.hooman.a6;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,14 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+
+    public static final String ORDER="YOUR ORDER";
+    public static final String SIZE="SIZE";
+    public static final String BREW="BREW";
+    public static final String SUGAR="SUGAR";
+    public static final String MILK="MILK";
+    public static final String INSTRUCTIONS="INSTRUCTIONS";
+
 
     private RadioGroup sizeGroup;
     private Spinner brewSpinner;
@@ -43,6 +53,16 @@ public class MainActivity extends Activity {
         orderButton = (Button) findViewById(R.id.orderButton);
         clearButton = (Button) findViewById(R.id.clearButton);
 
+        order=new CoffeeOrder(false,false,-1,"","");//instantiating order object
+
+    //TODO for testing purposes delete later
+   /*     sizeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                Log.d("dsfs","dfasdf");
+                saveOrder();
+            }
+        });*/
 
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,8 +82,27 @@ public class MainActivity extends Activity {
         orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, ViewOrderActivity.class);
 
-                Toast.makeText(getApplicationContext(), "Favorite loaded.", Toast.LENGTH_LONG).show();
+                //size
+                int radioButtonID = sizeGroup.getCheckedRadioButtonId();
+                View radioButton = sizeGroup.findViewById(radioButtonID);
+                int idx = sizeGroup.indexOfChild(radioButton);
+                i.putExtra(MainActivity.SIZE, idx);
+
+                //brew string
+                i.putExtra(MainActivity.BREW, brewSpinner.getSelectedItem().toString());
+
+                //sugar
+                i.putExtra(MainActivity.SUGAR, sugarSwitch.isChecked());
+
+                //milk
+                i.putExtra(MainActivity.MILK, milkCheckBox.isChecked());
+
+                //instructions
+                i.putExtra(MainActivity.INSTRUCTIONS, instructionsEdit.getText().toString());
+
+                startActivityForResult(i, 0);
             }
         });
 
@@ -95,5 +134,27 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void saveOrder()
+    {
+        //size
+        int radioButtonID = sizeGroup.getCheckedRadioButtonId();
+        View radioButton = sizeGroup.findViewById(radioButtonID);
+        int idx = sizeGroup.indexOfChild(radioButton);
+        Log.d("index", Integer.toString(idx));
+        order.setSize(idx);
+
+        //brew string
+        order.setBrew(brewSpinner.getSelectedItem().toString());
+
+        //sugar
+        order.setSugar(sugarSwitch.isChecked());
+
+        //milk
+        order.setMilk(milkCheckBox.isChecked());
+
+        //instructions
+        order.setInstruction(instructionsEdit.getText().toString());
     }
 }

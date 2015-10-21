@@ -16,4 +16,13 @@
     <string name="Medium">Medium</string>
     <string name="Small">Small</string>
     <string name="Size">Size</string>
+    <string name="title_activity_view_order">ViewOrderActivity</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="order_correct">Is this order correct?</string>
+    <string name="extra_sugar">Extra Sugar</string>
+    <string name="with_sugar">With Sugar</string>
+    <string name="with_milk">With milk.</string>
+    <string name="small">(small)</string>
+    <string name="turrkish">Turkish</string>
 </resources>
