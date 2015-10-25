@@ -1,7 +1,9 @@
 package ipt341.zarrabi.hooman.a6;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -38,6 +41,8 @@ public class MainActivity extends Activity {
 
     CoffeeOrder order;
 
+    SharedPreferences orderPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +60,10 @@ public class MainActivity extends Activity {
 
         order=new CoffeeOrder(false,false,-1,"","");//instantiating order object
 
-    //TODO for testing purposes delete later
+        orderPreferences = getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
+
+
+        //TODO for testing purposes delete later
    /*     sizeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -67,6 +75,29 @@ public class MainActivity extends Activity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //load size
+                int size = orderPreferences.getInt(MainActivity.SIZE,-1);
+                Log.d("size is",Integer.toString(size));
+                if(size>=0 && size <=2)
+                {
+                    ((RadioButton)sizeGroup.getChildAt(size)).setChecked(true);
+                }
+
+                //brew
+                String brew = orderPreferences.getString(MainActivity.BREW,null);
+                brewSpinner.setSelection(getIndex(brewSpinner, brew));
+
+                //sugar
+                sugarSwitch.setChecked(orderPreferences.getBoolean(MainActivity.SUGAR,false));
+
+                //milk
+                milkCheckBox.setChecked(orderPreferences.getBoolean(MainActivity.MILK,false));
+
+                //instructions
+                instructionsEdit.setText(orderPreferences.getString(MainActivity.INSTRUCTIONS,""));
+
+                Toast.makeText(getApplicationContext(), "Favorite loaded.", Toast.LENGTH_SHORT).show();
+
 
             }
         });
@@ -74,6 +105,26 @@ public class MainActivity extends Activity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor editor = orderPreferences.edit();
+
+                int radioButtonID = sizeGroup.getCheckedRadioButtonId();
+                View radioButton = sizeGroup.findViewById(radioButtonID);
+                int idx = sizeGroup.indexOfChild(radioButton);
+                editor.putInt(MainActivity.SIZE, idx);
+
+                //brew string
+                editor.putString(MainActivity.BREW, brewSpinner.getSelectedItem().toString());
+
+                //sugar
+                editor.putBoolean(MainActivity.SUGAR, sugarSwitch.isChecked());
+
+                //milk
+                editor.putBoolean(MainActivity.MILK, milkCheckBox.isChecked());
+
+                //instructions
+                editor.putString(MainActivity.INSTRUCTIONS, instructionsEdit.getText().toString());
+
+                editor.commit();
 
                 Toast.makeText(getApplicationContext(), "Favorite saved.", Toast.LENGTH_SHORT).show();
             }
@@ -174,5 +225,19 @@ public class MainActivity extends Activity {
 
         //instructions
         order.setInstruction(instructionsEdit.getText().toString());
+    }
+
+
+    private int getIndex(Spinner spinner, String myString)
+    {
+        int index = 0;
+
+        for (int i=0;i<spinner.getCount();i++){
+            if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(myString)){
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 }
