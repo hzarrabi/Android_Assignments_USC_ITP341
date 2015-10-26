@@ -1,9 +1,12 @@
 package ipt341.zarrabi.hooman.a6;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -47,6 +50,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.LTGRAY)); // set your desired color
 
         sizeGroup = (RadioGroup) findViewById(R.id.sizeRadioGroup);
         brewSpinner = (Spinner) findViewById(R.id.brewSpinner);

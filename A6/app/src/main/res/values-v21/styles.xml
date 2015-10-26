@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme" parent="android:Theme.Material.Light">
+        <item name="android:textColor">#f4b20611</item>
+        <item name="android:editTextColor">#f4b20611</item>
+        <item name="android:textColorPrimary">#f4b20611</item>
+        <item name="android:textColorSecondary">#f4b20611</item>
+        <item name="android:textColorTertiary">#f4b20611</item>
+        <item name="android:textColorPrimaryInverse">#f4b20611</item>
+        <item name="android:textColorSecondaryInverse">#f4b20611</item>
+        <item name="android:textColorTertiaryInverse">#f4b20611</item>
+
+        <item name="android:statusBarColor">#f4b28d43</item>
+
     </style>
+
 </resources>
