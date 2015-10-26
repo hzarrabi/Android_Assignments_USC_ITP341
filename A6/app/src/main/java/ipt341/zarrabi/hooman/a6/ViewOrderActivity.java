@@ -35,39 +35,41 @@ public class ViewOrderActivity extends Activity {
         confirm = (Button) findViewById(R.id.confirm);
         cancel = (Button) findViewById(R.id.cancel);
 
-        brew.setText(getIntent().getStringExtra(MainActivity.BREW));
+        CoffeeOrder order = (CoffeeOrder)getIntent().getSerializableExtra(MainActivity.ORDER);
+
+        brew.setText(order.getBrew());
 
         //size
-        if(getIntent().getIntExtra(MainActivity.SIZE,-1)==0)
+        if(order.getSize()==0)
         {
             size.setText("(Small)");
         }
-        else if(getIntent().getIntExtra(MainActivity.SIZE,-1)==1)
+        else if(order.getSize()==1)
         {
             size.setText("(Medium)");
         }
-        else if(getIntent().getIntExtra(MainActivity.SIZE,-1)==2)
+        else if(order.getSize()==2)
         {
             size.setText("(Large)");
         }
 
 
         //milk
-        if(getIntent().getBooleanExtra(MainActivity.MILK,false))
+        if(order.getMilk())
         {
             milk.setText("with milk");
         }
         else milk.setText("no milk");
 
         //sugar
-        if(getIntent().getBooleanExtra(MainActivity.SUGAR,false))
+        if(order.getSugar())
         {
             sugar.setText("with sugar");
         }
         else sugar.setText("no sugar");
 
 
-        instructions.setText(getIntent().getStringExtra(MainActivity.INSTRUCTIONS));
+        instructions.setText(order.getInstruction());
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override

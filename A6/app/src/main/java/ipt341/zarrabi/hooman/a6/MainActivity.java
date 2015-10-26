@@ -135,23 +135,8 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, ViewOrderActivity.class);
 
-                //size
-                int radioButtonID = sizeGroup.getCheckedRadioButtonId();
-                View radioButton = sizeGroup.findViewById(radioButtonID);
-                int idx = sizeGroup.indexOfChild(radioButton);
-                i.putExtra(MainActivity.SIZE, idx);
-
-                //brew string
-                i.putExtra(MainActivity.BREW, brewSpinner.getSelectedItem().toString());
-
-                //sugar
-                i.putExtra(MainActivity.SUGAR, sugarSwitch.isChecked());
-
-                //milk
-                i.putExtra(MainActivity.MILK, milkCheckBox.isChecked());
-
-                //instructions
-                i.putExtra(MainActivity.INSTRUCTIONS, instructionsEdit.getText().toString());
+                saveOrder();
+                i.putExtra(MainActivity.ORDER,order);
 
                 startActivityForResult(i, 0);
             }
@@ -160,7 +145,12 @@ public class MainActivity extends Activity {
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(getApplicationContext(), "Enjoy your order!", Toast.LENGTH_LONG).show();
+                sizeGroup.clearCheck();
+                brewSpinner.setSelection(0);
+                sugarSwitch.setChecked(false);
+                milkCheckBox.setChecked(false);
+                instructionsEdit.setText("");
             }
         });
     }

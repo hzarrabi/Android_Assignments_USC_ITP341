@@ -1,9 +1,11 @@
 package ipt341.zarrabi.hooman.a6;
 
+import java.io.Serializable;
+
 /**
  * Created by Hooman Z on 10/20/2015.
  */
-public class CoffeeOrder {
+public class CoffeeOrder implements Serializable{
 
     String brew;
     int size;// 0 for small, 1 for medium, 2 for large
