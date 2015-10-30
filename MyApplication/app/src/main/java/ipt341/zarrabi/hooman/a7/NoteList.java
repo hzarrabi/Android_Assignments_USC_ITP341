@@ -3,12 +3,15 @@ package ipt341.zarrabi.hooman.a7;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -37,14 +40,27 @@ public class NoteList extends Activity {
         listView.setAdapter(adapter);
 
 
-        //listener for the button
+        //listener for the  add button
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent i = new Intent(getApplicationContext(),
-                        AddEditCoffeeShopListing.class);
-                startActivityForResult(i, 0);*/
-                //TODO go to other activity to display note details and or edit
+                Intent i = new Intent(getApplicationContext(), NoteEditActivity.class);
+                startActivityForResult(i, 0);//activity is for new note so no index needed to pass through
+            }
+        });
+
+
+        //listener when note pressed
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                /*Toast.makeText(getApplicationContext(),
+                        "Id: " + id + ", position: " + position, Toast.LENGTH_SHORT)
+                        .show();*/
+
+                Intent i = new Intent(getApplicationContext(), NoteEditActivity.class);
+                i.putExtra(NoteEditActivity.POSITION, position);//passing index of note pressed to next activity
+                startActivityForResult(i, 0);
             }
         });
     }

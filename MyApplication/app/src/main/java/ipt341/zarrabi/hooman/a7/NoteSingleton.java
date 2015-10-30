@@ -20,6 +20,9 @@ public class NoteSingleton {
     {
         mContext = context;
         notes= new ArrayList<Note>();
+
+        Note n = new Note();
+        notes.add(n);
     }
 
     public static NoteSingleton get(Context c)
