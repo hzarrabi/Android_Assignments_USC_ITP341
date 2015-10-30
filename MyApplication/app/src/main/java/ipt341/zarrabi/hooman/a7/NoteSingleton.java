@@ -13,15 +13,16 @@ public class NoteSingleton {
 
     private static NoteSingleton sNoteSingleton;//the static singleton for all notes
 
-    private Context appContext;
+    private Context mContext;
 
     //private constructor for Singleton
     private NoteSingleton (Context context)
     {
-        appContext = context;
+        mContext = context;
+        notes= new ArrayList<Note>();
     }
 
-    private static NoteSingleton get(Context c)
+    public static NoteSingleton get(Context c)
     {
         if(sNoteSingleton==null)
         {
