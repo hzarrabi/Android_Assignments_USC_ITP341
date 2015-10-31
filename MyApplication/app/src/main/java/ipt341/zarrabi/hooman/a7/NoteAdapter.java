@@ -1,6 +1,7 @@
 package ipt341.zarrabi.hooman.a7;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +33,9 @@ public class NoteAdapter extends ArrayAdapter<Note> {
         TextView date = (TextView) convertView.findViewById(R.id.date);
         // Populate the data into the template view using the data object
         title.setText(note.getTitle());
+        Log.d("date","before");
         date.setText(new SimpleDateFormat("MM/dd/yyyy").format(note.getDate()));
+        Log.d("date","after");
         // Return the completed view to render on screen
         return convertView;
     }

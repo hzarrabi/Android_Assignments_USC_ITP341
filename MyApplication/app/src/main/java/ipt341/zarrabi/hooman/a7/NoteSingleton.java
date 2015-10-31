@@ -22,10 +22,15 @@ public class NoteSingleton {
         mContext = context;
         notes= new ArrayList<Note>();
 
-        Note n = new Note();
+       /* Note n = new Note();
         n.setTitle("gayeeeed");
         n.setDate(Calendar.getInstance().getTime());
+
+        Note j=new Note();
+        j.setTitle("yooooo");
+        j.setDate(Calendar.getInstance().getTime());
         notes.add(n);
+        notes.add(j);*/
     }
 
     public static NoteSingleton get(Context c)

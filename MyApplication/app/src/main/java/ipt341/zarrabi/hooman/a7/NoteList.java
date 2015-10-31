@@ -21,7 +21,7 @@ public class NoteList extends Activity {
     ListView listView;
 
     private ArrayList<Note> notes;
-    private ArrayAdapter<Note> adapter;
+    private NoteAdapter adapter;
 
 
     @Override
@@ -34,15 +34,10 @@ public class NoteList extends Activity {
         buttonAdd = (Button) findViewById(R.id.button_add);
         listView = (ListView)findViewById(R.id.noteListView);
 
-       /* //get notes and load into lists
-        notes=NoteSingleton.get(this).getNotes();
-        adapter=new ArrayAdapter<Note>(this,android.R.layout.simple_list_item_1, notes);
-        listView.setAdapter(adapter);*/
-
         //get notes and load into lists
         notes=NoteSingleton.get(this).getNotes();
-        NoteAdapter adapter2 =new NoteAdapter(this,notes);
-        listView.setAdapter(adapter2);
+        adapter =new NoteAdapter(this,notes);
+        listView.setAdapter(adapter);
         registerForContextMenu(listView);
 
 
@@ -91,5 +86,14 @@ public class NoteList extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == Activity.RESULT_OK) { // this means note changes or added
+            adapter.notifyDataSetChanged();
+        }
     }
 }
