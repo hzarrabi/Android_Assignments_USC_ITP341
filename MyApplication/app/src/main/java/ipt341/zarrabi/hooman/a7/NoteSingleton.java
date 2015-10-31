@@ -3,6 +3,7 @@ package ipt341.zarrabi.hooman.a7;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by Hooman Z on 10/27/2015.
@@ -22,6 +23,8 @@ public class NoteSingleton {
         notes= new ArrayList<Note>();
 
         Note n = new Note();
+        n.setTitle("gayeeeed");
+        n.setDate(Calendar.getInstance().getTime());
         notes.add(n);
     }
 

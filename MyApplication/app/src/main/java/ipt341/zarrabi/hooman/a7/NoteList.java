@@ -32,12 +32,18 @@ public class NoteList extends Activity {
 
         //connect views
         buttonAdd = (Button) findViewById(R.id.button_add);
-        listView = (ListView)findViewById(R.id.listView);
+        listView = (ListView)findViewById(R.id.noteListView);
+
+       /* //get notes and load into lists
+        notes=NoteSingleton.get(this).getNotes();
+        adapter=new ArrayAdapter<Note>(this,android.R.layout.simple_list_item_1, notes);
+        listView.setAdapter(adapter);*/
 
         //get notes and load into lists
         notes=NoteSingleton.get(this).getNotes();
-        adapter=new ArrayAdapter<Note>(this,android.R.layout.simple_list_item_1, notes);
-        listView.setAdapter(adapter);
+        NoteAdapter adapter2 =new NoteAdapter(this,notes);
+        listView.setAdapter(adapter2);
+        registerForContextMenu(listView);
 
 
         //listener for the  add button
