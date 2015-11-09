@@ -1,6 +1,7 @@
 package ipt341.zarrabi.hooman.a8;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,8 +58,12 @@ public class StockAdapter  extends ArrayAdapter<Stock> {
             stockIcon.setImageResource(R.drawable.logo);
             Log.d("Brandddd",stock.getBrand());
         }
+
+        convertView.setBackgroundColor(position % 2 == 0 ? Color.WHITE : Color.GRAY);
         return convertView;
     }
+
+
 
 
 }
