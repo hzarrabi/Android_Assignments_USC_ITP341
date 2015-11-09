@@ -6,4 +6,5 @@
     <string name="Brand_String">Brand</string>
     <string name="StockAmount_String">N/A</string>
     <string name="title_activity_edit">EditActivity</string>
+    <string name="title_activity_change_stock">ChangeStock</string>
 </resources>

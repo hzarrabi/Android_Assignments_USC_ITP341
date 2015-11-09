@@ -20,6 +20,10 @@
             android:name=".AddStock"
             android:label="@string/title_activity_edit" >
         </activity>
+        <activity
+            android:name=".ChangeStock"
+            android:label="@string/title_activity_change_stock" >
+        </activity>
     </application>
 
 </manifest>
