@@ -1,3 +1,9 @@
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -22,7 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editProduct"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginLeft="25dp"/>
     </LinearLayout>
 
 
@@ -43,7 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editBrand"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginLeft="93dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -62,8 +70,19 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_marginLeft="98dp"
+            android:text="$"
+            android:enabled="false"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/EditPrice"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="number"
+            />
     </LinearLayout>
 
 
@@ -84,7 +103,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editColor"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginLeft="95dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -104,7 +124,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editStock"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginLeft="93dp"
+            android:inputType="number"/>
     </LinearLayout>
 
     <Button
@@ -117,3 +139,5 @@
 
 
 </LinearLayout>
+
+</ScrollView>
