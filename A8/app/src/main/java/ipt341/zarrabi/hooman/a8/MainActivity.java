@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ListView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,7 +18,9 @@ import java.util.Iterator;
 public class MainActivity extends Activity {
 
     ArrayList<Stock> stocks;
-
+    StockAdapter adapter;
+    ListView stockList;
+    Button addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +28,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         stocks = StockSingleton.get(this).getStocks();//connecting the stock array list to singleton
+        adapter= new StockAdapter(this,stocks);
 
+        stockList = (ListView) findViewById(R.id.stockListView);
+        addButton = (Button) findViewById(R.id.button_add);
 
+        stockList.setAdapter(adapter);
 
         //reading from stock.json
         byte[] buffer = null;
@@ -56,7 +64,7 @@ public class MainActivity extends Activity {
                 String color = anObject.getString("color");
                 String brand = anObject.getString("brand");
                 int numStocks = anObject.getInt("stock");
-                Stock s = new Stock(name, price, color, brand,numStocks);
+                Stock s = new Stock(name, brand, color, price,numStocks);
                 stocks.add(s);//added to stocks list
                 //alphabetize
             }

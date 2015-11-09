@@ -8,8 +8,8 @@ android:padding="15dp">
 
 
 <ImageView
-    android:layout_width="96dp"
-    android:layout_height="96dp"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
     android:id="@+id/imageView"
     android:src="@drawable/logo"
     android:minHeight="150dp"

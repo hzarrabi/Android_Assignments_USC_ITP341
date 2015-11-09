@@ -1,6 +1,7 @@
 package ipt341.zarrabi.hooman.a8;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +55,7 @@ public class StockAdapter  extends ArrayAdapter<Stock> {
         else
         {
             stockIcon.setImageResource(R.drawable.logo);
+            Log.d("Brandddd",stock.getBrand());
         }
         return convertView;
     }
