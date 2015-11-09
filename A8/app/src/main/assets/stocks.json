@@ -1,0 +1,88 @@
+{
+  "stock": {
+        "iPhone 5s": {
+          "id": 1,
+          "price": "$550",
+          "stock": 80,
+          "color": "black",
+          "brand":"Apple"
+        },
+        "iPhone 6": {
+          "id": 2,
+          "price": "$680",
+          "stock": 120,
+          "color": "gold",
+          "brand":"Apple"
+        },
+        "iPhone 6s": {
+          "id": 3,
+          "price": "$860",
+          "stock": 20,
+          "color": "white",
+          "brand":"Apple"
+        },
+        "iWatch": {
+          "id": 4,
+          "price": "$860",
+          "stock": 20,
+          "color": "white",
+          "brand":"Apple"
+        },
+        "Galaxy S5":{
+          "id":5,
+          "price":"$780",
+          "stock":55,
+          "color":"black",
+          "brand":"Samsung"
+        },
+        "Galaxy S6":{
+          "id":6,
+          "price":"$780",
+          "stock":10,
+          "color":"black",
+          "brand":"Samsung"
+        },
+        "Gear S2":{
+          "id":7,
+          "price":"$360",
+          "stock":150,
+          "color":"blue",
+          "brand":"Samsung"
+        },
+        "MacBook Pro":{
+          "id":8,
+          "price":"$360",
+          "stock":150,
+          "color":"blue",
+          "brand":"Apple"
+        },
+        "Surface Book":{
+          "id":9,
+          "price":"$360",
+          "stock":150,
+          "color":"blue",
+          "brand":"Microsoft"
+        },
+        "Occulus":{
+          "id":10,
+          "price":"$360",
+          "stock":150,
+          "color":"blue",
+          "brand":"Facebook"
+        },
+        "Holo Lens":{
+          "id":11,
+          "price":"$360",
+          "stock":150,
+          "color":"blue",
+          "brand":"Microsoft"
+        },
+        "Samsung Gear VR":{
+          "id":12,
+          "price":"$360",
+          "stock":150,
+          "color":"blue",
+          "brand":"Samsung"
+        }
+    }
+}

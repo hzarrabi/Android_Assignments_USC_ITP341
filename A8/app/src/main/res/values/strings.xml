@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">A8</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Brand_String">Brand</string>
+    <string name="StockAmount_String">N/A</string>
+</resources>

@@ -1,0 +1,40 @@
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="horizontal"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/LinearLayout0123"
+android:padding="15dp">
+
+
+<ImageView
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    android:id="@+id/imageView"
+    android:src="@drawable/logo"
+    android:minHeight="150dp"
+    android:minWidth="150dp"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"/>
+
+<TextView
+    android:id="@+id/Brand"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    android:textSize="20sp"
+    android:text="@string/Brand_String"
+    android:layout_gravity="center_vertical"/>
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:text="@string/StockAmount_String"
+    android:id="@+id/stockAmount"
+    android:layout_gravity="center_vertical"
+    android:gravity="right"/>
+
+
+</LinearLayout>
