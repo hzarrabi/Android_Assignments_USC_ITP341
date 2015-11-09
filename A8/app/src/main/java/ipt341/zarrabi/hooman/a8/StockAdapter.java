@@ -37,7 +37,7 @@ public class StockAdapter  extends ArrayAdapter<Stock> {
         stockAmount = (TextView) convertView.findViewById(R.id.stockAmount);
         stockIcon = (ImageView) convertView.findViewById(R.id.imageView);
 
-        brand.setText(stock.getBrand());
+        brand.setText(stock.getName());
         stockAmount.setText(Integer.toString(stock.getStockNumber()));
 
         if(stock.getBrand().equalsIgnoreCase("apple"))

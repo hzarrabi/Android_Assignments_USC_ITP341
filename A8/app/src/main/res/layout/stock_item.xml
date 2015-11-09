@@ -25,15 +25,15 @@ android:padding="15dp">
     android:textStyle="bold"
     android:textSize="20sp"
     android:text="@string/Brand_String"
-    android:layout_gravity="center_vertical"/>
+    android:layout_gravity="center"
+    />
 
     <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceMedium"
     android:text="@string/StockAmount_String"
     android:id="@+id/stockAmount"
-    android:layout_gravity="center_vertical"
+    android:layout_gravity="center"
     android:gravity="right"/>
 
 

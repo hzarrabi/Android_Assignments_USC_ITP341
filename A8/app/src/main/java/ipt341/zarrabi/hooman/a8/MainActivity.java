@@ -1,9 +1,11 @@
 package ipt341.zarrabi.hooman.a8;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -13,6 +15,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 
 public class MainActivity extends Activity {
@@ -32,8 +36,6 @@ public class MainActivity extends Activity {
 
         stockList = (ListView) findViewById(R.id.stockListView);
         addButton = (Button) findViewById(R.id.button_add);
-
-        stockList.setAdapter(adapter);
 
         //reading from stock.json
         byte[] buffer = null;
@@ -76,13 +78,44 @@ public class MainActivity extends Activity {
         }
 
 
+        //alphabetizing
+        Collections.sort(stocks, new Comparator<Stock>() {
+            @Override
+            public int compare(Stock lhs, Stock rhs) {
+                return (lhs.getName().toLowerCase()).compareTo(rhs.getName().toLowerCase());
+            }
+        });
+
+        stockList.setAdapter(adapter);
 
 
-
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplication(),AddStock.class);
+                startActivityForResult(i,0);
+            }
+        });
 
     }
 
+
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == Activity.RESULT_OK) {
+            Collections.sort(stocks, new Comparator<Stock>() {
+                @Override
+                public int compare(Stock lhs, Stock rhs) {
+                    return (lhs.getName().toLowerCase()).compareTo(rhs.getName().toLowerCase());
+                }
+            });
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+        @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
